@@ -11,7 +11,11 @@
   const eventMinute = timeMatch ? timeMatch[2] : "00";
   const eventStart = new Date(`${eventDate}T${String(eventHour).padStart(2, "0")}:${eventMinute}:00`);
   const fullDate = new Intl.DateTimeFormat("en", { weekday: "long", month: "long", day: "numeric", year: "numeric" }).format(date);
-  const heroDate = fullDate.toUpperCase().replace(",", " ·").replace(/ (\d{4})$/, " · $1");
+  const heroDate = [
+    new Intl.DateTimeFormat("en", { weekday: "long" }).format(date),
+    new Intl.DateTimeFormat("en", { month: "long", day: "numeric" }).format(date),
+    new Intl.DateTimeFormat("en", { year: "numeric" }).format(date)
+  ].join(" · ").toUpperCase();
   const parents = `${mom} & ${dad}`;
 
   $("parentNames").textContent = parents;
