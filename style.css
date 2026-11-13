@@ -53,3 +53,9 @@
 .diyas{position:absolute;z-index:4;bottom:9%;left:13%;right:13%;display:flex;justify-content:space-between;pointer-events:none;font-size:25px;filter:drop-shadow(0 3px 4px #754a2440)}
 .envelope-footer{z-index:4;bottom:3.5%;color:#826b4f}.decor-star,.decor-star-two{color:#b49150;z-index:0}
 @media(prefers-reduced-motion:reduce){.gatefold-panel,.curtain,.gatefold-medallion{transition-duration:.01ms}}
+
+/* Scroll reveals pop in fully readable and tuck away when they leave the viewport. */
+.js-ready .section-pad,.js-ready .section-pad.in-view{opacity:1;transform:none}
+.js-ready .scroll-pop{visibility:hidden;opacity:0;transform:translate3d(0,18px,0) scale(.975);transition:transform .46s cubic-bezier(.2,.72,.25,1),opacity .24s ease,visibility 0s linear .46s;will-change:transform,opacity}
+.js-ready .scroll-pop.is-visible{visibility:visible;opacity:1;transform:translate3d(0,0,0) scale(1);transition-delay:var(--pop-delay,0ms),var(--pop-delay,0ms),0s}
+@media(prefers-reduced-motion:reduce){.js-ready .scroll-pop{transition:none;transform:none}.js-ready .scroll-pop.is-visible{opacity:1;visibility:visible}}

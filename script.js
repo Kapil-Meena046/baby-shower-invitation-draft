@@ -31,15 +31,23 @@
   $("mapLink").href = d.mapUrl || `https://maps.google.com/?q=${encodeURIComponent(d.address || "")}`;
 
   document.body.classList.add("js-ready");
-  const scrollObserver = new IntersectionObserver((entries) => {
+  const popObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        scrollObserver.unobserve(entry.target);
-      }
+      entry.target.classList.toggle("is-visible", entry.isIntersecting);
     });
-  }, { threshold: .15 });
-  document.querySelectorAll(".section-pad").forEach((section) => scrollObserver.observe(section));
+  }, { threshold: .08, rootMargin: "0px 0px -5% 0px" });
+  const popTargets = document.querySelectorAll([
+    ".hero-art", ".hero > .eyebrow", ".hero h1", ".hero-copy", ".hero-rule",
+    ".hero-date", ".hero-time", ".scroll-cue", ".section-pad > .eyebrow",
+    ".section-pad > h2", ".section-pad > p", ".scratch-wrap", ".date-card .button",
+    ".calendar-note", ".timer > div", ".venue-card", ".footer > span",
+    ".footer > div", ".footer > p"
+  ].join(","));
+  popTargets.forEach((item, index) => {
+    item.classList.add("scroll-pop");
+    item.style.setProperty("--pop-delay", `${(index % 4) * 65}ms`);
+    popObserver.observe(item);
+  });
 
   // The carved doors swing inward, then the curtains part to reveal the invitation.
   $("openButton").addEventListener("click", () => {
