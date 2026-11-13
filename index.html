@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#edf5f7">
+  <meta name="description" content="A little prince is on his way. Open our baby shower invitation.">
+  <title>A Little Prince Is on His Way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="phone" id="top">
+    <section class="envelope-screen" id="envelopeScreen" aria-label="Open the baby shower invitation">
+      <div class="sky-decor decor-star">✦</div><div class="sky-decor decor-star-two">✧</div>
+      <div class="toran" aria-hidden="true"><span>❀</span><span>🍃</span><span>❀</span><span>🍃</span><span>❀</span><span>🍃</span><span>❀</span><span>🍃</span><span>❀</span></div>
+      <div class="gatefold-card" aria-hidden="true">
+        <span class="gatefold-card-star">✦</span><span class="gatefold-card-rule"></span><span class="gatefold-card-star">✧</span>
+      </div>
+      <div class="curtains" id="curtains" aria-hidden="true"><span class="curtain curtain-left"></span><span class="curtain curtain-right"></span></div>
+      <button class="gatefold" id="openButton" type="button" aria-label="Tap to open the invitation">
+        <span class="gatefold-panel gatefold-panel-left"></span><span class="gatefold-panel gatefold-panel-right"></span>
+        <span class="gatefold-medallion"><span class="medallion-star">✦</span><span class="tap-label">TAP TO<br>OPEN</span><span class="hindi-welcome">शुभ आगमन</span></span>
+      </button>
+      <div class="diyas" aria-hidden="true"><span>🪔</span><span>🪔</span></div>
+      <p class="envelope-footer">A LITTLE LOVE IS ON THE WAY <span>✦</span></p>
+    </section>
+
+    <article class="invitation" id="invitation" hidden>
+      <header class="hero">
+        <div class="hero-art" aria-hidden="true"><span class="moon">☾</span><span class="cloud cloud-a">☁</span><span class="cloud cloud-b">☁</span><span class="tiny-star s1">✦</span><span class="tiny-star s2">✧</span><span class="teddy">♧</span></div>
+        <span class="eyebrow">WITH JOY IN OUR HEARTS</span>
+        <h1>Welcome to<br>our baby shower</h1>
+        <p class="hero-copy">We are so happy to celebrate this little blessing with you.<br><strong id="parentNames">Maya &amp; Arjun</strong></p>
+        <div class="hero-rule"><span>✦</span></div>
+        <p class="hero-date" id="heroDate">SUNDAY · NOVEMBER 15 · 2026</p>
+        <p class="hero-time" id="heroTime">2:00 PM onwards</p>
+        <a class="scroll-cue" href="#honored">SCROLL TO EXPLORE <span>↓</span></a>
+      </header>
+
+      <section class="welcome section-pad" id="honored">
+        <span class="eyebrow">A LITTLE NOTE FROM US</span>
+        <h2>We are honored<br>to have you with us</h2>
+        <p id="inviteCopy">With hearts full of joy, Maya &amp; Arjun invite you to shower their little boy with love.</p>
+        <span class="sprig" aria-hidden="true">✳</span>
+      </section>
+
+      <section class="date-card section-pad" aria-labelledby="dateTitle">
+        <span class="eyebrow">A LITTLE SURPRISE</span><h2 id="dateTitle">Scratch to reveal</h2>
+        <p class="muted">Give the golden heart a little scratch to uncover our special day.</p>
+        <div class="scratch-wrap" id="scratchWrap">
+          <div class="reveal-date"><span class="revealed-day" id="revealedDate">Sunday, November 15, 2026</span><span class="revealed-time" id="revealedTime">2:00 PM onwards</span></div>
+          <canvas id="scratchCanvas" aria-label="Scratch the gold heart to reveal the date"></canvas>
+          <span class="scratch-heart" aria-hidden="true">♡</span><span class="scratch-prompt" id="scratchPrompt">SCRATCH TO REVEAL</span>
+        </div>
+        <button class="button button-outline" id="calendarButton" type="button">Save the date <span>♡</span></button>
+        <p class="calendar-note" id="calendarNote" aria-live="polite"></p>
+      </section>
+
+      <section class="countdown section-pad">
+        <span class="eyebrow">THE BIG DAY IS GETTING CLOSER</span><h2>Counting down<br>to meet our baby boy</h2>
+        <div class="timer" aria-live="polite"><div><strong id="days">--</strong><span>DAYS</span></div><i>:</i><div><strong id="hours">--</strong><span>HOURS</span></div><i>:</i><div><strong id="minutes">--</strong><span>MINUTES</span></div><i>:</i><div><strong id="seconds">--</strong><span>SECONDS</span></div></div>
+      </section>
+
+      <section class="venue section-pad" id="venue">
+        <span class="eyebrow">WE CAN’T WAIT TO SEE YOU</span><h2>Where we’ll<br>celebrate</h2>
+        <div class="venue-card"><div class="map-art" aria-hidden="true"><span class="map-road road-one"></span><span class="map-road road-two"></span><span class="map-park"></span><span class="map-pin">✦</span></div><div class="venue-info"><h3 id="venueName">Kesar Bagh</h3><p class="venue-en" id="venueAddress">Kesar Bagh, Chittorgarh, Rajasthan</p><div class="hindi-copy" lang="hi"><h3 id="venueNameHindi">केसर बाग</h3><p id="venueAddressHindi">केसर बाग, चित्तौड़गढ़, राजस्थान</p></div><a class="text-link" id="mapLink" href="https://www.google.com/maps/search/?api=1&amp;query=Kesar+Bagh%2C+Chittorgarh%2C+Rajasthan" target="_blank" rel="noreferrer">Open in Maps <span>↗</span></a></div></div>
+      </section>
+      <footer class="footer"><span>MADE WITH LOVE</span><div>♡</div><p>We can’t wait to celebrate with you</p></footer>
+    </article>
+  </main>
+  <script src="event-details.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
