@@ -2,7 +2,7 @@
 
 This is a mobile-first, single-page invitation. Open `index.html` in VS Code's Live Server or any browser to preview it. On a desktop, it stays in a centered phone-width layout; on a phone, it fills the screen.
 
-The opening is an Indian-style arched doorway with carved blue double doors, a marigold-and-mango-leaf toran, and diyas. Tap the round seal to open both doors inward; then the curtains part. Scroll to see the honored-to-have-you message, scratch-to-reveal date, calendar download, live countdown, and venue details in English and Hindi.
+The opening uses the `golden-palace.mp4` video from the Downloads folder. Tap the center play button to watch it; when it ends, the invitation page appears. Scroll to see the honored-to-have-you message, scratch-to-reveal date, calendar download, live countdown, and venue details in English and Hindi.
 
 ## Personalize it
 

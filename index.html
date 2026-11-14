@@ -13,19 +13,15 @@
 </head>
 <body>
   <main class="phone" id="top">
-    <section class="envelope-screen" id="envelopeScreen" aria-label="Open the baby shower invitation">
-      <div class="sky-decor decor-star">✦</div><div class="sky-decor decor-star-two">✧</div>
-      <div class="toran" aria-hidden="true"><span>❀</span><span>🍃</span><span>❀</span><span>🍃</span><span>❀</span><span>🍃</span><span>❀</span><span>🍃</span><span>❀</span></div>
-      <div class="gatefold-card" aria-hidden="true">
-        <span class="gatefold-card-star">✦</span><span class="gatefold-card-rule"></span><span class="gatefold-card-star">✧</span>
-      </div>
-      <div class="curtains" id="curtains" aria-hidden="true"><span class="curtain curtain-left"></span><span class="curtain curtain-right"></span></div>
-      <button class="gatefold" id="openButton" type="button" aria-label="Tap to open the invitation">
-        <span class="gatefold-panel gatefold-panel-left"></span><span class="gatefold-panel gatefold-panel-right"></span>
-        <span class="gatefold-medallion"><span class="medallion-star">✦</span><span class="tap-label">TAP TO<br>OPEN</span><span class="hindi-welcome">शुभ आगमन</span></span>
+    <section class="video-intro" id="videoIntro" aria-label="Baby shower video introduction">
+      <video class="intro-video" id="introVideo" src="golden-palace.mp4" playsinline preload="auto" aria-label="Golden palace invitation introduction"></video>
+      <div class="video-shade" aria-hidden="true"></div>
+      <p class="video-caption">A LITTLE PRINCE IS ON HIS WAY <span>✦</span></p>
+      <button class="video-play" id="playIntro" type="button" aria-label="Tap to play the invitation video">
+        <span class="video-play-icon" aria-hidden="true">▶</span><span class="video-play-label">TAP TO BEGIN</span>
       </button>
-      <div class="diyas" aria-hidden="true"><span>🪔</span><span>🪔</span></div>
-      <p class="envelope-footer">A LITTLE LOVE IS ON THE WAY <span>✦</span></p>
+      <button class="video-skip" id="skipIntro" type="button">Skip intro</button>
+      <p class="video-message" id="videoMessage" aria-live="polite">Tap to watch our invitation</p>
     </section>
 
     <article class="invitation" id="invitation" hidden>

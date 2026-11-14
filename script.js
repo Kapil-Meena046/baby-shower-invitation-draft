@@ -49,21 +49,39 @@
     popObserver.observe(item);
   });
 
-  // The carved doors swing inward, then the curtains part to reveal the invitation.
-  $("openButton").addEventListener("click", () => {
-    $("openButton").classList.add("opened");
-    $("openButton").disabled = true;
-    window.setTimeout(() => $("curtains").classList.add("curtains-open"), 1300);
+  const intro = $("videoIntro");
+  const introVideo = $("introVideo");
+  const playIntro = $("playIntro");
+
+  function revealInvitation() {
+    if (intro.classList.contains("leaving")) return;
+    introVideo.pause();
+    intro.classList.add("leaving");
     window.setTimeout(() => {
-      $("envelopeScreen").classList.add("opening-away");
-      window.setTimeout(() => {
-        $("envelopeScreen").hidden = true;
-        $("invitation").hidden = false;
-        window.scrollTo({ top: 0, behavior: "auto" });
-        requestAnimationFrame(paintFoil);
-      }, 550);
-    }, 2050);
+      intro.hidden = true;
+      $("invitation").hidden = false;
+      window.scrollTo({ top: 0, behavior: "auto" });
+      requestAnimationFrame(paintFoil);
+    }, 520);
+  }
+
+  playIntro.addEventListener("click", () => {
+    intro.classList.add("playing");
+    $("videoMessage").textContent = "Enjoy the little preview";
+    const playRequest = introVideo.play();
+    if (playRequest && typeof playRequest.catch === "function") {
+      playRequest.catch(() => {
+        intro.classList.remove("playing");
+        $("videoMessage").textContent = "Video didn’t start. Tap to try again.";
+      });
+    }
   });
+  introVideo.addEventListener("ended", revealInvitation);
+  introVideo.addEventListener("error", () => {
+    intro.classList.remove("playing");
+    $("videoMessage").textContent = "Video didn’t load. Tap to try again.";
+  });
+  $("skipIntro").addEventListener("click", revealInvitation);
 
   const canvas = $("scratchCanvas");
   const ctx = canvas.getContext("2d");
