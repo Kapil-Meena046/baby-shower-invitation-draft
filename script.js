@@ -52,6 +52,32 @@
   const intro = $("videoIntro");
   const introVideo = $("introVideo");
   const playIntro = $("playIntro");
+  let welcomeTyped = false;
+
+  function typeWelcome() {
+    if (welcomeTyped) return;
+    welcomeTyped = true;
+    const english = "Welcome to our baby shower";
+    const hindi = "हमारे बेबी शावर में आपका स्वागत है";
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
+      $("welcomeEnglish").textContent = english;
+      $("welcomeHindi").textContent = hindi;
+      return;
+    }
+    const typeLine = (id, text, done) => {
+      const characters = Array.from(text);
+      let index = 0;
+      const tick = () => {
+        $(id).textContent = characters.slice(0, index + 1).join("");
+        index++;
+        if (index < characters.length) window.setTimeout(tick, 62);
+        else if (done) window.setTimeout(done, 250);
+      };
+      tick();
+    };
+    typeLine("welcomeEnglish", english, () => typeLine("welcomeHindi", hindi));
+  }
 
   function revealInvitation() {
     if (intro.classList.contains("leaving")) return;
@@ -61,6 +87,7 @@
       intro.hidden = true;
       $("invitation").hidden = false;
       window.scrollTo({ top: 0, behavior: "auto" });
+      typeWelcome();
       requestAnimationFrame(paintFoil);
     }, 520);
   }
