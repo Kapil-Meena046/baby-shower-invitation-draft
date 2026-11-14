@@ -94,3 +94,45 @@
 .typing-cursor{display:inline-block;width:1px;height:.9em;margin-left:3px;vertical-align:-.05em;background:var(--gold);animation:type-blink .8s steps(2,start) infinite}
 @keyframes type-blink{to{visibility:hidden}}
 @media(prefers-reduced-motion:reduce){.typing-cursor{animation:none;visibility:hidden}}
+
+/* Refined reading styles for the invitation sections below the welcome cover. */
+.invitation .section-pad{padding:54px 27px;border-bottom:1px solid #e4dfd0}
+.invitation .section-pad>.eyebrow{font-size:10px;letter-spacing:.19em;color:#9a7944}
+.invitation .section-pad>h2{font-size:clamp(31px,8vw,35px);line-height:1.2;letter-spacing:-.02em;margin:13px 0 17px}
+.invitation .section-pad>p{font-size:15px;line-height:1.85;color:#596f78}
+.welcome{background:linear-gradient(155deg,#fffdf7,#f6f2e8)}
+.welcome>p{max-width:320px}
+.sprig{font-size:27px;color:#8da79a}
+.date-card{background:linear-gradient(160deg,#f0f6f5,#e6eff0)}
+.muted{max-width:310px;margin:0 auto 24px!important}
+.scratch-wrap{max-width:300px;height:166px;margin-bottom:25px}
+.revealed-day{font-size:21px}
+.revealed-time{font-size:13px;letter-spacing:.04em}
+.button{min-height:48px;padding:0 22px;font-size:12px;letter-spacing:.045em;border-radius:999px}
+.button-outline{border-color:#9eb4b4;background:#fffdf780}
+.calendar-note{font-size:12px!important;line-height:1.6!important}
+.countdown{background:linear-gradient(145deg,#e6eef0,#dce9eb)}
+.timer{gap:clamp(12px,4vw,19px);margin-top:28px}
+.timer strong{font-size:clamp(29px,8vw,34px);color:#426c80}
+.timer span{font-size:9px;letter-spacing:.14em;color:#5f7881}
+.venue{background:linear-gradient(155deg,#fffdf7,#f5f0e3)}
+.venue-card{max-width:330px;border:1px solid #e0d7c3;border-radius:12px;overflow:hidden;background:#fffdf8;box-shadow:0 10px 26px #334b5610}
+.map-art{height:138px}
+.venue-info{padding:21px 21px 23px}
+.venue-info h3{font-size:21px;color:#354f5d}
+.venue-info p{font-size:14px;line-height:1.75;color:#65777c}
+.hindi-copy{border-color:#e9e1d1;margin:17px 0;padding-top:15px}
+.hindi-copy h3{font-size:18px;color:#735d3e}
+.hindi-copy p{font-size:15px;color:#65777c}
+.text-link{display:inline-flex;align-items:center;gap:8px;min-height:42px;font-size:12px}
+.text-link span{font-size:16px}
+.footer{padding:34px 22px 40px;background:linear-gradient(145deg,#d9e7e9,#cbdde0);color:#526e79}
+.footer>span{font-size:10px;letter-spacing:.2em}
+.footer div{font-size:26px}
+.footer p{font-size:17px}
+@media(max-width:360px){
+  .invitation .section-pad{padding-right:22px;padding-left:22px}
+  .timer{gap:10px}
+  .timer strong{font-size:27px}
+  .timer span{font-size:8px}
+}
